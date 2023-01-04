@@ -1,4 +1,4 @@
-from app import db, mySql, app, tools
+from app import db, app, tools
 from flask import render_template, url_for, flash, redirect, g, request, jsonify, session, send_file
 from app.datamanager import datamanager
 from app.model import A10, Udata, Files2, FileLog, Files

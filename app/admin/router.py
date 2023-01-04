@@ -1,4 +1,4 @@
-from app import db, mySql, tools, app
+from app import db, tools, app
 from app.model import User, Udata, Files2, FileLog, Files
 from flask import render_template, url_for, flash, redirect, g, request,session, send_file
 from werkzeug.utils import secure_filename

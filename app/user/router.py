@@ -1,5 +1,5 @@
 import json
-from app import db, mySql, app
+from app import db, app
 from flask import render_template, url_for, flash, redirect, g, request, jsonify, session
 from app.user import user
 from app.model import A10, Udata, Files2, FileLog, Files
