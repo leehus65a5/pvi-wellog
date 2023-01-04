@@ -1,0 +1,7 @@
+{% extends 'user/base.html' %}
+{%block menu %}
+	<a href="{{url_for('datamanager.manage_recivefile')}}" class="d-block text-light p-3"><i class="bi bi-arrow-repeat mr-2 lead" style="padding-right: 10px;"></i> Kiểm duyệt dữ liệu</a>
+	<a href="{{url_for('datamanager.downloadfile')}}" class="d-block text-light p-3"><i class="bi bi-file-earmark-arrow-down-fill mr-2 lead" style="padding-right: 10px;"></i> Tải dữ liệu</a>
+	{%block menu_ad %}
+	{%endblock%}
+{%endblock%}

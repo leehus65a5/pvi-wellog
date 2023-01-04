@@ -1,0 +1,52 @@
+:root{
+    --primary: #111854;
+    --light: #ffffff;
+    --grey: #efefef;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Muli', sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.bg-primary{
+    background-color: var(--primary) !important;
+}
+
+#sidebar-container{
+    min-height: 100vh;
+    transition: 0.5s;
+}
+
+#sidebar-container .logo{
+    padding: .875rem 1.25rem;
+}
+
+#sidebar-container .menu{
+    width: 218.98px;
+}
+main{
+    padding: 20px;
+}
+
+#recieve-file{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr #receive, td #receive{
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}

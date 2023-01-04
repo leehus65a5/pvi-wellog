@@ -1,0 +1,24 @@
+{% if g.user.User.role == "user" %}
+    {%extends 'user/base.html'%}
+{% elif g.user.User.role == "review" %}
+    {%extends 'datamanager/base.html'%}
+{% else %}
+    {%extends 'admin/base.html'%}
+{% endif %}
+
+{%block content%}
+
+<div class="panel2" style="display: flex;">
+    <iframe src="{{ url_for('/dash1/')}}" class="content"  style="position:fixed; 
+    width: 100%;; height:100%;" ></iframe>
+</div>
+
+<script>
+    $(document).ready(function(){
+                $('#hideshow').on('click', function(event) {        
+                    $('.content').toggle('show');
+                });
+            });
+</script>
+
+{% endblock %}  

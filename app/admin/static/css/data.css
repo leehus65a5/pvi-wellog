@@ -1,0 +1,86 @@
+.left {
+    padding: 20px;
+    grid-area: left;
+    margin: 10px 10px 0 10px;
+    background: #f1f1f1;
+}
+
+
+@media screen and (max-height: 450px){}
+
+.flash {
+    text-align: center;
+    box-sizing: border-box;
+    background:mediumseagreen;
+    width: 400px;
+    justify-items: center;
+    border-radius: 20px;
+    margin-left: 35%;
+}
+
+#data, #recieve-file {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#data td, #data th, #recieve-file td, #recieve-file th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#data th, #recieve-file th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #002f96;
+    color: white;
+    text-align: center;
+}
+
+.row1 {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.row3{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.pagination{
+    padding-top: 0;
+    list-style-type: none;
+    display: flex;
+    margin-top: 0;
+
+}
+.pagination a{
+    padding-left: 0;
+    margin: 0 10px ;
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+}
+.button-style{
+    float: right;
+}
+.button{
+    border-style: none;
+    padding: 7px 6px;
+    font-size: 90%;
+    background-color: #002f96;
+    color:rgb(255, 255, 255);
+    border-radius: 7px;
+}
+
+table#data tr:nth-child(even), table#recieve-file tr:nth-child(even) {
+    background-color: #DDEBF7;
+}
+table#data tr:nth-child(odd), table#recieve-file tr:nth-child(odd) {
+    background-color:#BDD7EE;
+}
+
+h3{
+    text-align: center;
+}

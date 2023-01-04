@@ -1,0 +1,11 @@
+{% if g.user.User.role == "user" %}
+    {%extends 'user/base.html'%}
+{% elif g.user.User.role == "review" %}
+    {%extends 'datamanager/base.html'%}
+{% else %}
+    {%extends 'admin/base.html'%}
+{% endif %}
+
+{%block content %}
+{% include 'datamanager/receive-content.html' %}
+{%endblock%}

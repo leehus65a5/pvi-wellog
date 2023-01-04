@@ -1,0 +1,70 @@
+{% extends 'user/base.html' %}
+
+{%block data %}
+
+<h3>List table</h3>
+{%if listTable%}
+	{%for i in listTable%}
+		<p>{{ i }}</p>
+	{%endfor%}
+{%endif%}
+<h3>Nhiệm vụ:
+	<p>Render json về bảng dữ liệu</p>
+	<p>Có nút download để tải dữ liệu json về dạng csv</p>
+</h3>
+
+<h3>test js_Data2 </h3>
+
+<p id="demo12"></p>
+<script>
+	const obj = JSON.parse('{{js_data|tojson}}');
+	let text = "hello";
+	document.getElementById("demo12").innerHTML = text;
+</script>
+
+<h3> Test json data </h3>
+
+
+{%if js_data%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<table class="table table-striped">
+	<tr class="bg-info">
+		<th>DEPT</th>
+		<th>PERM</th>
+		<th>GAMMA</th>
+		<th>POROSITY</th>
+		<th>FLUVIALFACIES</th>
+		<th>NETGROSS</th>
+	</tr>
+	<tbody class="myTable">
+
+	</tbody>
+</table>
+
+<script type="text/javascript">
+	var myArray = "${js_data}"
+	
+	buildTable(myArray)
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].DEPT}</td>
+							<td>${data[i].PERM}</td>
+							<td>${data[i].GAMMA}</td>
+							<td>${data[i].POROSITY}</td>
+							<td>${data[i].FLUVIALFACIES}</td>
+							<td>${data[i].NETGROSS}</td>
+					  </tr>`
+			table.innerHTML += row
+		}
+	}
+
+</script>
+
+{%endif%}
+
+{%endblock%}

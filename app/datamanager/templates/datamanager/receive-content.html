@@ -1,0 +1,33 @@
+{%for mess in get_flashed_messages()%}
+<div class="flash">{{mess}}</div>
+{%endfor%}
+
+
+
+{%if recives%}
+<h3>RECIVE FILES</h3>
+	<table id = "recieve-file">
+		{%for data in recives%}
+			<tr id="receive">
+				<td id="receive">{{data.uploader}}</td>
+				<td id="receive">{{data.reviewer}}</td>
+				<td id="receive">{{data.wellid}}</td>
+				<td id="receive">{{data.status}}</td>
+				<td id="receive"><form method="POST">
+					<input type="checkbox" name="all" id ='all'>
+					<label for="all">reject</label>
+
+					<input type="checkbox" name="accept" id ='accept'>
+					<label for="all">accept</label>
+					
+					{%if g.user.User.role in ['admin', 'data']%}
+					<input type="checkbox" name="todb" id ='todb'>
+					<label for="all">to database</label>
+					{%endif%}
+					
+					<input type="submit">
+				</form></td>
+			</tr>
+		{%endfor%}
+	</table>
+{%endif%}

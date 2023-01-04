@@ -1,0 +1,79 @@
+<!-- The purpose of this html is been used in admin/manage -->
+<link href="/user/static/css/data.css" rel="stylesheet">
+
+<div class="row g-0 text-center">
+	<div class="col-2 col-md-3 border border-2 bg-light">
+		<form method="POST" autocomplete="off" class="wellname">
+			<label for="getwellname">Nhập tên giếng</label>
+			<input type="text" name="name" id="getwellname" list="wells">
+			{%if listTable%}
+				<datalist id="wells"> 
+					{%for i in listTable%}<option>{{i}}</option>{%endfor%}
+				</datalist>
+			{%endif%}  
+			<input type="submit"/>
+		</form>
+	
+		<form method="POST" autocomplete="off" class="wellname1">
+		<p>
+			<input type="checkbox" name="all" id ='all'>
+			<label for="all">Show all</label>
+	
+			<input type="checkbox" name="save" id ='csv'>
+			<label for="csv">Lưu file csv</label>
+			<input type="submit"/>
+		</p>
+		</form>
+	</div>
+	<div class="col-sm-7 col-md-9 border border-2 bg-light">
+		{% for mess in get_flashed_messages() %}
+	<div class="flash">flash messeger : {{ mess }}</div>
+	{% endfor %}
+
+	<form method="POST" autocomplete="off">
+		<input type="text" name="start" placeholder="start"/>
+		<input type="text" name="stop" placeholder="stop"/>
+		<br>
+		{%if listkey%}
+		{% for i in listkey %}
+		<input type="checkbox" name="{{i}}" id="{{i}}"/>
+		<label for="{{i}}">{{i}}</label>
+		{%endfor%}
+		{%endif%}
+		<input type="submit"/>
+	</form>
+
+	{%if datas%}
+	<table id="data">
+		<thead>
+			<tr>
+				{%for header in listkey %}
+				<th>{{header}}</th>
+				{%endfor%}
+			</tr>
+		</thead>
+		<tbody>
+			{%for data in datas %}
+			<tr>
+				{%for header in listkey %}
+				<td>{{data[header]}}</td>
+				{%endfor%}
+			</tr>
+		{%endfor%}
+		</tbody>
+	</table>
+
+	<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" charset="utf8"
+			src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>	
+	<script type="text/javascript" charset="utf8"src="/user/static/js/bootstrapTable.js"></script>
+
+	<script>
+		$(document).ready(function () {
+		var table = $('#data').DataTable();
+	});
+	</script>
+
+	{%endif%}
+	</div>
+</div>

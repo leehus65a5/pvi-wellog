@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{%if user%}
+<h2>Table</h2>
+{% for i in user %}
+<h4>{{i}}</h4>
+{%endfor%}
+{%else%}
+<h2>NOTHING</h2>
+{%endif%}
+
+<h2>Checking zone</h2>
+{%if check%}
+<h2>Table</h2>
+{% for i in check %}
+<h4>{{i}}</h4>
+{%endfor%}
+{%else%}
+<h2>NOTHING CHECK</h2>
+{%endif%}
+{% endblock %}

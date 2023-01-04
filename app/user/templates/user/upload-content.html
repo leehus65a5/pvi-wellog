@@ -1,0 +1,73 @@
+{%for mess in get_flashed_messages()%}
+<div class="flash">{{mess}}</div>
+{%endfor%}
+
+<link href="/user/static/css/data.css" rel="stylesheet">
+
+<form method="POST", enctype="multipart/form-data">
+	{{ form.hidden_tag() }}
+	{{ form.fileup.lable }} {{ form.fileup()}} 
+	{{ form.submit_upload() }}
+</form>
+<br>
+
+<!-- <h2>UPLOADING FILES</h2> -->
+
+{%if sendfiles%}
+<h3>FILE ĐANG CHỜ</h3>
+
+	<table id = "recieve-file">
+		<thead>
+			<tr>
+				<th>Người Upload File</th>
+				<th>Người Quản Lý</th>
+				<th>Tên File</th>
+				<th>Trạng Thái</th>
+				<th>Option</th>
+			</tr>
+		</thead>
+		{%for data in sendfiles%}
+			<tr id="receive">
+				<td id="receive">{{data.uploader}}</td>
+				<td id="receive">{{data.reviewer}}</td>
+				<td id="receive">{{data.wellid}}</td>
+				<td id="receive">{{data.status}}</td>
+				<td id="receive"><form method="POST">
+					{%if g.user.User.role in ['review','admin','data']%}
+					<input type="checkbox" name="all" id ='all'>
+					<label for="all">reject</label>
+					<input type="checkbox" name="accept" id ='accept'>
+					<label for="all">accept</label>
+
+					<input type="checkbox" name="todb" id ='todb'>
+					<label for="all">to database</label>
+					<input type="submit">
+					{%endif%}
+				</form></td>
+			</tr>
+		{%endfor%}
+	</table>
+{%endif%}
+
+{%if hist%}
+<br>
+<h3>LỊCH SỬ FILE</h3>
+	<table id = "recieve-file">
+		<thead>
+			<tr>
+				<th>Người Upload File</th>
+				<th>Người Quản Lý</th>
+				<th>Tên File</th>
+				<th>Trạng Thái</th>
+			</tr>
+		</thead>
+		{%for data in hist%}
+			<tr id="history">
+				<td id="receive">{{data.uploader}}</td>
+				<td id="receive">{{data.reviewer}}</td>
+				<td id="receive">{{data.wellid}}</td>
+				<td id="receive">{{data.status}}</td>
+			</tr>
+		{%endfor%}
+	</table>
+{%endif%}

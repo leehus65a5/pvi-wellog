@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+#message{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+    margin: auto;
+    height: 10%;
+    width: 20%;
+    font-family: 'Roboto'; 
+    color: white; 
+    background-color: #212529; 
+    border-radius: 8px 8px;
+    font-weight: 20%;
+}
+
+.btn-close{
+    position: absolute;
+    right: 32%;
+    top: 5%;
+}
+
+h1{
+    font-size: 2.3em;
+    font-weight: bold;
+}
+
+.myform{
+    margin: 0 auto;
+    width: 40%;
+    padding: 2em;
+    max-width: 100%;
+    color: #fff;
+    box-shadow: 0 4px 6px 0px rgba(22,22,26,0.18);
+    @media(max-width: 576px){
+        max-width: 90%;
+        margin: 0px auto;
+    }
+}
+
+.form-control{
+    background-color: inherit;
+    color: #fff;
+    padding-left: 0px;
+    border: 0px;
+    border-bottom: 1px solid #fff;
+}
+
+.myform .btn{
+    width: 100%;
+    font-weight: 800;
+    background-color: #fff;
+    border-radius: 0;
+    padding: 0.5em 0;
+}
+
+.myform .btn:hover{
+    color: #333;
+}
+
+.myform p{
+    text-align: center;
+    padding-top: 2em;
+    color: grey;
+}
+
+p a{
+    color: #e1e1e1;
+    text-decoration: none;
+}
+
+p:a:hover{
+    color: #fff;
+}
+
+.myform-bg{
+    position: fixed;
+    left:0%;
+    right:0%;
+    top:17%;
+}
